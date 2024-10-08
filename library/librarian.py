@@ -51,7 +51,7 @@ def check_out_book(library, isbn: str):
             library[isbn]['available'] = False
             print(f"The book '{library[isbn]['title']}' has been checked out.")
         else:
-            print(f"Sorry, the book {library[isbn]['title']} is unavailable.")
+            print(f"Sorry, the book '{library[isbn]['title']}' is unavailable.")
     else:
         print("The book doesn't exist in the library.")
 
@@ -70,7 +70,7 @@ def return_book(library, isbn: str):
             library[isbn]['available'] = True
             print(f"The book '{library[isbn]['title']}' has been returned to the library.")
         else:
-            print(f"The book {library[isbn]['title']} is not checked out.")
+            print(f"The book '{library[isbn]['title']}' is not checked out.")
     else:
         print("The book doesn't exist in the library.")
 
