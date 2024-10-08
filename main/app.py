@@ -8,29 +8,34 @@ def app():
 
     """
     # Sample of books dictionary
-    # library[111] = {
-    #     "title": JAVA,
-    #     "author": don't know,
-    #     "isbn": 111,
-    #     "available": True
+    # library{
+    #   "9780316769174": {
+    #       "title": "The Catcher in the Rye",
+    #       "author": "J.D. Salinger",
+    #       "available": True
+    #   }
     # }
     bookleeList = {
 
-        "111": {
-            "title": "JAVA",
-            "author": "don't know",
-            "isbn": "111",
+        "9781451628425": {
+            "title": "A Beautiful Mind",
+            "author": "Sylvia Nasar",
             "available": True
         },
-        "222": {
-            "title": "Python Principles",
-            "author": "don't know",
-            "isbn": "222",
-            "available": False
-        }
+        "9780393866667": {
+            "title": "A Hacker's Mind",
+            "author": "Bruce Schneier",
+            "available": True
+        },
+        "9780078022128": {
+            "title": "Software Engineering A Practitioner's Approach",
+            "author": "Roger S. Pressman",
+            "available": True
+        },
 
     }
     while True:
+        print("")
         try:
 
             print("-"*8, "Welcome to Booklee", "-"*8)
@@ -41,7 +46,7 @@ def app():
                   "\n 5. remove a book "
                   "\n Q/q Quit application")
             print("-"*36)
-            choice = input(">>> Enter Your Choice: ")
+            choice = input(" >>> Enter Your Choice: ")
 
             if choice == "1":
                 # display books method
@@ -50,28 +55,28 @@ def app():
 
             elif choice == "2":
                 # checking out a book
-                isbn = input("Enter ISBN number: ")
-                check_out_book(bookleeList, isbn)
+                isbn: int = int(input(" >> Enter ISBN number to Check out book: "))
+                check_out_book(bookleeList, str(isbn))
                 input(" > To show the list please press any button < ")
 
             elif choice == "3":
                 # returning a book
-                isbn = input("Enter ISBN number: ")
-                return_book(bookleeList, isbn)
+                isbn: int = int(input(" >> Enter ISBN number return book: "))
+                return_book(bookleeList, str(isbn))
                 input(" > To show the list please press any button < ")
 
             elif choice == "4":
                 # Adding a new book
-                title: str = input("Enter Book Title: ")
-                author: str = input("Enter Book Author Name: ")
-                isbn: int = int(input("Enter ISBN number: "))
+                title: str = input(" >> Enter Book Title: ")
+                author: str = input(" >> Enter Book Author Name: ")
+                isbn: int = int(input(" >> Enter Book ISBN number: "))
                 add_book(bookleeList, title, author, str(isbn))
                 input(" > To show the list please press any button < ")
 
             elif choice == "5":
                 # removing a book
-                isbn = input("Enter ISBN number: ")
-                remove_book(bookleeList, isbn)
+                isbn: int = int(input(" >> Enter ISBN number to remove book: "))
+                remove_book(bookleeList, str(isbn))
                 input(" > To show the list please press any button < ")
 
             elif choice.lower() == "q":
@@ -84,7 +89,7 @@ def app():
                 print("Please Enter a valid choice from the list.")
 
         except ValueError:
-            print("Please Enter Valid Data")
+            print("Incorrect Entry, Please Enter Valid Information")
 
 
 # starting the application
