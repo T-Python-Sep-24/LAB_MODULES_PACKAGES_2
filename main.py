@@ -1,5 +1,25 @@
 from library import librarian
-library={}
+library={
+    9780446310789: {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "isbn": 9780446310789,
+        "available": True
+    },
+    9780316769174: {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "isbn": 9780316769174,
+        "available": True
+    },
+
+    9780451524935: {
+        "title": "1984",
+        "author": "George Orwell",
+        "isbn": 9780451524935,
+        "available": True
+    }
+}
 isbn = 0
 title= ""
 author= ""
