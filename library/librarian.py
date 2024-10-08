@@ -11,7 +11,7 @@ def add_book(library, title:str, author:str, isbn:int):
     author= input("enter the author name of the book: ")
     isbn= int(input("enter the isbn of the book: "))
     if isbn in library:
-        print(f"the book with isbn: {isbn} already exists.")
+        print(f"the book with ISBN: {isbn} already exists.")
     else:
         library[isbn]= {}
         library[isbn] ={
