@@ -87,6 +87,6 @@ def display_books(library):
             else:
                 availability = "Checked out"
             
-            print(f"{i + 1}. {library[isbn]['title']} by {library[isbn]['author']} ISBN: {isbn} - {availability}\n")
+            print(f"{i + 1}. {library[isbn]['title']} by {library[isbn]['author']} ISBN: {isbn} - {availability}")
     else:
         print("The library has no books to display.")
