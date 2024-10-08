@@ -4,6 +4,9 @@ title= ""
 author= ""
 
 def add_book(library, title:str, author:str, isbn:int):
+    """
+    this function is used to add a book to the library
+    """
     title = input("enter the title of the book: ")
     author= input("enter the author name of the book: ")
     isbn= int(input("enter the isbn of the book: "))
@@ -24,16 +27,22 @@ def add_book(library, title:str, author:str, isbn:int):
 
 
 def remove_book(library, isbn):
-    isbn = int(input("Enter ISBN to delete: "))
+    """
+    this function is used to remove a book from the library
+    """
+    isbn = int(input("Enter ISBN of the book you want to remove: "))
     if isbn in  library:
         del library[isbn]
-        print(f"book with isbn: {isbn} deleted.")
+        print(f"book with isbn: {isbn} removed.")
     else:
             print("the book is not here")
 
 
 
 def check_out_book(library, isbn):
+    """
+    this function is used to check out a book from the library
+    """
     isbn = int(input("Enter ISBN of the book you want to check out: "))
     if isbn in  library:
 
@@ -49,6 +58,9 @@ def check_out_book(library, isbn):
 
 
 def return_book(library, isbn):
+    """
+    this function is used to return a book to the library
+    """
     isbn = int(input("Enter ISBN of the book you want to return: "))
     if isbn in  library:
 
@@ -63,6 +75,9 @@ def return_book(library, isbn):
 
 
 def display_books(library):
+    """
+    this function is used to display all books in the library
+    """
     if not library:
         print("no books")
     else:

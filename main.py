@@ -4,6 +4,9 @@ isbn = 0
 title= ""
 author= ""
 def main():
+    """
+    this function is used to ask the user to modify the library
+    """
     while True:
         print("\n1. add a book")
         print("2. remove a book")
