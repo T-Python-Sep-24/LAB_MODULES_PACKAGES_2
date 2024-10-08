@@ -1,10 +1,13 @@
 # Sample of books dictionary
-# library[111] = {
-#     "title": JAVA,
-#     "author": don't know,
-#     "isbn": 111,
-#     "available": True
+# library{
+#   "9780316769174": {
+#       "title": "The Catcher in the Rye",
+#       "author": "J.D. Salinger",
+#       "available": True
+#   }
 # }
+
+
 # Add Book Function
 def add_book(library: dict, title: str, author: str, isbn: str):
     """
@@ -18,14 +21,17 @@ def add_book(library: dict, title: str, author: str, isbn: str):
     """
     if isbn not in library:
         library[isbn] = {
+
             "title": title,
             "author": author,
-            "isbn": isbn,
             "available": True
+
         }
-        print(f"The Book {library[isbn]["title"]} is added successfully")
+        print(f"The Book \"{library[isbn]["title"]}\" is added successfully")
     else:
         print("Book is already added")
+
+
 # Remove Book Function
 def remove_book(library: dict, isbn:str):
     """
@@ -37,13 +43,15 @@ def remove_book(library: dict, isbn:str):
     """
 
     if isbn in library:
-        conf = input(f"Are You sure you want to delete {library[isbn]["title"]} [Y/N]")
+        bookTitle = library[isbn]["title"]
+        conf = input(f"Are You sure you want to delete \"{bookTitle}\" [Y/N]")
         if conf.lower() == "y":
             del library[isbn]
-            print("Book is deleted Successfully")
+            print(f"The book \"{bookTitle}\" is deleted Successfully")
 
     else:
-        print(f"{isbn} was not found")
+        print("The book was not found")
+
 
 # Check out Books Function
 def check_out_book(library, isbn):
@@ -51,28 +59,39 @@ def check_out_book(library, isbn):
     if isbn in library:
         if library[isbn]["available"]:
             library[isbn]["available"] = False
-            print(f"{library[isbn]["title"]} is Checked Out for you Successfully")
+            print(f"\"{library[isbn]["title"]}\" is Checked Out for you Successfully")
         else:
             print("Sorry, The book you're looking for is not available at the moment, try again soon")
     else:
         print("The Book your are looking for is not in our library")
 
+
 # Return Books Function
 def return_book(library, isbn):
 
-    if isbn in library:
+    if isbn in library and not library[isbn]["available"]:
         library[isbn]["available"] = True
         print("Thank You, Please Keep Reading and Learning")
-        print("Returning Book...")
+        print(f"Returning Book... \"{library[isbn]["title"]}\"")
+
+    elif isbn in library and library[isbn]["available"]:
+        print("The Book is Already Returned")
+
     else:
         print("The Book your are trying to return is not in our library")
+
 
 # Print All Books Function
 def display_books(library):
     if len(library) >= 1:
-        for i, book in enumerate(library, start=1):
-            print(f"{i}. {library[book]["title"]} Authored By: {library[book]["author"]} ISBN NO: {library[book]["isbn"]}, Availability: {library[book]["available"]}")
-            # print(library[book])
+        print("")
+        for i, bookReference in enumerate(library, start=1):
+            availability = "Checked Out"
+            if library[bookReference]["available"]:
+                availability = "Available"
+            print(f"{i}. {library[bookReference]["title"]} Authored By: {library[bookReference]["author"]} (ISBN NO: {bookReference}) - {availability}")
+        print("")
+            # print(library[bookReference])
             # library[isbn]["title"]
 
     else:
