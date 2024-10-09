@@ -1,6 +1,5 @@
 from library import librarian
 
-# Entry-level script to manage a library system
 def main():
     # Create an empty library dictionary
     library = {}

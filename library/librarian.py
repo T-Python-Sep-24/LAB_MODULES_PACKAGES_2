@@ -47,3 +47,4 @@ def display_books(library):
     for isbn, book in library.items():
         status = "Available" if book['available'] else "Checked Out"
         print(f"{book['title']} by {book['author']} (ISBN: {isbn}) - {status}")
+        
