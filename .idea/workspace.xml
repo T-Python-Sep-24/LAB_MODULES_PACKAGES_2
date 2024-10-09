@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723fdf7b-c183-4e7d-9d42-c967b424b7db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/library/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library/librarian.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/librarian.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/librarian.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

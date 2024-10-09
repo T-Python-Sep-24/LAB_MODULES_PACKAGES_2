@@ -1,10 +1,10 @@
-library = {}  # This should be a dictionary to store the books
+library = {}  
 
 def add_book(library, title: str, author: str, isbn: str):
     if isbn in library:
         print("The book already exists.")
     else:
-        library[isbn] = {  # Corrected this line to add the book to the library
+        library[isbn] = {
             "title": title,
             "author": author,
             "isbn": isbn,
